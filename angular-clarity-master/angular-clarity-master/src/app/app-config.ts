@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-
+import{environment} from 'src/environments/environment';
 /**
  * This is a singleton class
  */
@@ -11,10 +11,10 @@ export class AppConfig {
   public locale: string = "en-US";
   public currencyFormat = {style: "currency", currency: "USD"};
   public dateFormat = {year: 'numeric', month: 'short', day: 'numeric'};
-
+  apiURL = environment.backendport;
   // API Related configs
 //   public apiPort: string = "9191";
-  public apiPort: string = "31167";
+  public apiPort: string = this.apiURL;
   public apiProtocol: string;
   public apiHostName: string;
   public baseApiPath: string;

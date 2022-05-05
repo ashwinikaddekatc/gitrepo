@@ -245,7 +245,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 String name = oauthUser.getAttribute("name");
                 userService.processOAuthPostLogin(oauthUser.getEmail(),name);
      
-                response.sendRedirect("http://localhost:4200/#/google1");
+                response.sendRedirect("http://realits.ml:31165/#/google1");
             }
         });
         http.addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);

@@ -1,15 +1,31 @@
 <div class="container">
   <form [formGroup]="entryForm" (ngSubmit)="onSubmit()">
-      <div>
+      <div class="display_msg">
           <h2>How are you currently managing your work_<br>from home,the office,or whereyour you are?</h2>
+          <p style="font-size:18px;">Choose any option(s) below.</p>
       </div>
 
-      <div>
-          <h4>Choose any option(s) below.</h4>
 
-      </div>
       <br>
+      <div class="s-order-dash-pg">
+        <!-- <div class="chart-box" id="word1" *ngFor="let app of tools1; let index = i" [routerLink]="app.action"><br>
+          <b style="margin-left: 50px;"><clr-icon shape="container-volume" size="40"></clr-icon></b>
+          <h5 class="center"> <b>{{ app.title }}</b>  </h5>
+        </div> -->
+        <div class="chart-box" id="word1"><br>
+          <b style="margin-left: 50px;"><clr-icon shape="container-volume" size="40" ></clr-icon></b>
+          <h5 class="center"> <b>100% Local Development</b>  </h5>
+        </div>
+        <div class="chart-box" id="word1"><br>
+          <b style="margin-left: 50px;"><clr-icon shape="container-volume" size="40"></clr-icon></b>
+          <h5 class="center"> <b> Local + Github/GitLab</b>  </h5>
+        </div>
+        <div class="chart-box" id="word1"><br>
+          <b style="margin-left: 50px;"><clr-icon shape="container-volume" size="40"></clr-icon></b>
+          <h5 class="center"> <b>100% on cloud</b>  </h5>
+        </div>
 
+      </div>
       <div class="s-order-dash-pg">
 
           <!-- <div class="chart-box"> -->
@@ -61,9 +77,9 @@
       </div> -->
 
       </div>
-      <br>
 
-      <button type="submit" class="btn btn-primary" [disabled]="!entryForm.valid">Continue</button>
+
+      <button style="margin-left: 700px;"  type="submit" class="btn btn-primary" [disabled]="!entryForm.valid">Continue</button>
 
 
   </form>

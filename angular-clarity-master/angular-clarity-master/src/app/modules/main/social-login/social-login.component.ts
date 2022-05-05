@@ -3,7 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {UserRegistrationService} from 'src/app/services/api/user-registration.service';
 import {HttpClientModule} from "@angular/common/http";
 import {UserRegistration1Service} from "../../../services/user-registration1.service";
-
+import{environment} from 'src/environments/environment';
 @Component({
   selector: 'app-social-login',
   templateUrl: './social-login.component.html',
@@ -23,7 +23,7 @@ export class SocialLoginComponent implements OnInit {
   }
 
   email: string;
-
+  apiURL = environment.backendurl;
   ngOnInit(): void {
     this.email = this.userRegistrationService.getStoredEmail();
 
@@ -31,7 +31,7 @@ export class SocialLoginComponent implements OnInit {
 
   goToGoogle() {
     // this.router.navigate(["https://localhost:8080/auth/google"]);
-    window.location.href = 'http://realits.ml:31167/oauth2/authorization/google';
+    window.location.href = `${this.apiURL}/oauth2/authorization/google`;
   }
 
   goToLinkedIn() {

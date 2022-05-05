@@ -1,14 +1,14 @@
 <div class="container">
 
-  <h2><b>Tell us about yourself,Ganesh</b></h2>
+  <h2 style="text-align: center;"><b>Tell us about yourself</b></h2>
 
   <br>
 
-  <form [formGroup]="entryForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="entryForm" (ngSubmit)="onSubmit()" style="text-align: center;">
 
-      <div class="clr-col-md-4 clr-col-sm-12">
+      <div class="clr-col-md-4 clr-col-sm-12" style="margin-left: 550px;">
           <label for="controllerName"><strong>What kind of work do you do?</strong></label><br />
-          <select id="" formControlName="working" selected="null" class="clr-dropdown">
+          <select id="" formControlName="working" selected="null" class="clr-input">
               <option value="null">Select a type of work similar to yours</option>
               <option *ngFor="let ts of values" [value]="ts">{{ ts }}</option>
           </select>

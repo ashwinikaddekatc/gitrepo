@@ -1,11 +1,4 @@
 
-
-
-
-
-
-
-
  .clr-input {
   color: #212529;
   //  border: 1px solid #ced4da;
@@ -14,6 +7,18 @@
   margin-top: 10px;
   width: 100%;
   margin-bottom: 10px;
+}
+
+select {
+  width: 30%;
+  padding: 15px 15px;
+  background-color:rgb(255, 255, 255);
+ // margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
 }
 
 

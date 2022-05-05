@@ -7,7 +7,7 @@ import {UserRegistrationComponent} from "../modules/main/user-registration/user-
 import {UserInfoService} from "./user-info.service";
 import {catchError} from "rxjs/operators";
 import {AppConfig} from "../app-config";
-
+import{environment} from 'src/environments/environment';
 
 export interface User {
   firstName: string;
@@ -51,7 +51,7 @@ export class UserRegistration1Service {
   private companyRegURL = "token/company-registration";
   private resetPasswordURL = "api/reset-password";
 
-  private url = "http://realits.ml:31167/token/"
+  private url = environment.backendtoken; //"http://realits.ml:31167/token/"
 
 
   public registeredEmailKey: string = "registeredEmail";

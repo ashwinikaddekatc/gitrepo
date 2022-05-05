@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {UserRegistrationService} from "../../../services/api/user-registration.service";
 import {Router} from "@angular/router";
-
+import{environment} from 'src/environments/environment';
 @Component({
   selector: 'app-googlemid',
   templateUrl: './oauthmid.component.html',
@@ -12,11 +12,11 @@ export class OauthmidComponent implements OnInit {
 
   user: any = {};
   public localStorage: Storage = localStorage;
-
+  apiURL = environment.backendurl;
 
   constructor(private http: HttpClient, private userService: UserRegistrationService, private router: Router) {
     console.log("aaaaaaaaaaa=  "+this.userService.getStoredEmail());
-    this.http.post<any>(`http://realits.ml:31167/token/getUser`,{
+    this.http.post<any>(`${this.apiURL}/token/getUser`,{
 	email: this.userService.getStoredEmail()
 }).subscribe(
       (res) => {
@@ -55,9 +55,9 @@ export class OauthmidComponent implements OnInit {
 	console.log("in angular = "+email)
 
 
-    this.http.post("http://realits.ml:31167/token/email-exists2", email).subscribe((res) => {
+    this.http.post(`${this.apiURL}/token/email-exists2`, email).subscribe((res) => {
         let idandct;
-        this.http.post("http://realits.ml:31167/token/get-info", email).subscribe((res) => {
+        this.http.post(`${this.apiURL}/token/get-info`, email).subscribe((res) => {
             idandct = res;
             this.router.navigate([`/about-work/${idandct.id}/${idandct.checkNumber}`]);
           },
